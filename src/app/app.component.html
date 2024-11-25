@@ -1,25 +1,55 @@
 <mat-sidenav-container class="example-container">
-  <!-- Sidenav content -->
+
+  <!-- Main Sidebar -->
   <mat-sidenav #sidenav mode="side" opened>
     <mat-nav-list>
       <a mat-list-item href="#">Home</a>
       <a mat-list-item href="#">Projects</a>
-      <a mat-list-item href="#">Settings</a>
+      <a mat-list-item href="#">Contact</a>
     </mat-nav-list>
+
+    <!-- File Explorer Sidebar -->
+    <div class="file-explorer">
+      <p class="explorer-title">File Explorer</p>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home">home.html</a>
+        <a mat-list-item routerLink="/skills">skills.js</a>
+        <a mat-list-item routerLink="/projects">projects.json</a>
+        <a mat-list-item routerLink="/contact">contact.txt</a>
+      </mat-nav-list>
+    </div>
   </mat-sidenav>
 
+  <!-- Main Content -->
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <!-- Toolbar -->
+    <mat-toolbar class="custom-toolbar">
+      <img src="assets/intellij-logo.png" alt="Logo" class="toolbar-logo" />
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>IntelliJ-Like Portfolio</span>
+      <span class="project-name">Montassar SELMI</span>
     </mat-toolbar>
 
-    <div class="content">
-      <h1>Welcome to My Portfolio</h1>
-      <p>Here is some information about me...</p>
-      <button mat-raised-button color="accent">Contact Me</button>
+    <!-- Code Area -->
+    <div class="code-area">
+      <div class="line-numbers">
+        <span *ngFor="let i of [].constructor(50); let index = index">{{ index + 1 }}</span>
+      </div>
+      <div class="code-content">
+        <p>// Welcome to my portfolio!</p>
+        <p>// This section mimics a code editor.</p>
+        <p>function greet() &#123;</p>
+        <p>  console.log('Hello, world!');</p>
+        <p>&#125;</p>
+        <p>greet();</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-left">src/app/home/home.component.ts</span>
+      <span class="footer-right">50 lines, 120 KB</span>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

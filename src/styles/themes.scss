@@ -1,12 +1,7 @@
-// Import Angular Material theming core
 @import '@angular/material/core/theming';
 
-// Define primary and accent color palettes
-$primary: mat.define-palette(mat.$indigo-palette);
-$accent: mat.define-palette(mat.$pink-palette, 200, 100, 400);
+$primary: mat.define-palette(mat.$blue-grey-palette, 700);
+$accent: mat.define-palette(mat.$pink-palette, A200);
+$theme: mat.define-dark-theme($primary, $accent);
 
-// Create a light theme using the defined palettes
-$theme: mat.define-light-theme($primary, $accent);
-
-// Apply the theme across all Angular Material components
 @include mat.all-component-themes($theme);

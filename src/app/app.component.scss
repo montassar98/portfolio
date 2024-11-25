@@ -1,11 +1,119 @@
+/* Sidenav Container */
 .example-container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Sidenav */
 mat-sidenav {
-  width: 250px;
+  background: #2b2d30; /* IntelliJ dark sidebar */
+  color: white;
 }
 
-.content {
-  padding: 20px;
+/* File Explorer Sidebar */
+.file-explorer {
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
 }
+
+.explorer-title {
+  font-size: 14px;
+  color: #999;
+  margin: 5px 10px;
+}
+
+mat-nav-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.toolbar-logo {
+  height: 24px;
+  width: 24px;
+}
+
+.project-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Main Content */
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box;
+}
+
+/* Toolbar */
+.custom-toolbar {
+  height: 40px;
+  background: #2e2e31;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Ensure it's above other content */
+}
+
+/* Code Area */
+.code-area {
+  flex: 1; /* Fills available space between toolbar and footer */
+  display: flex;
+  background: #1e1f22;
+  color: #c5c8c6;
+  font-family: 'Source Code Pro', monospace;
+  border: 1px solid #444;
+  margin: 0 16px;
+  overflow-y: auto;
+}
+
+
+.line-numbers {
+  background: #1e1e1e;
+  color: #555;
+  padding: 10px 5px;
+  text-align: right;
+  border-right: 1px solid #444;
+}
+
+.line-numbers span {
+  display: block;
+  line-height: 20px;
+}
+
+.code-content {
+  flex: 1;
+  padding: 10px;
+  white-space: pre-wrap;
+  line-height: 20px;
+}
+
+
+/* Footer */
+.footer {
+  flex-shrink: 0; /* Keeps footer fixed */
+  height: 24px;
+  background: #1e1e1e;
+  color: #c5c8c6;
+  font-family: 'Source Code Pro', monospace;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  border-top: 1px solid #444;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.footer-left {
+  font-size: 12px;
+}
+
+.footer-right {
+  font-size: 12px;
+}
+
